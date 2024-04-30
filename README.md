@@ -56,3 +56,13 @@ Pour installer et configurer le projet, suivez ces étapes:
    ```shell
    php bin/console doctrine:migrations:migrate
    ```
+
+
+10. **Démarrer le Serveur Symfony**: Lancez le serveur Symfony avec la commande suivante:
+
+   ```shell
+   symfony server:start
+   ```
+---
+**NB** :
+Il est possible de devoir désactiver les CORS de votre navigateur
