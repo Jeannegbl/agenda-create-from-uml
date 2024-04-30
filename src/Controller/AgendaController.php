@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Agenda;
+use App\Entity\Contact;
+
 use App\Form\AgendaType;
 use App\Repository\AgendaRepository;
+use App\Repository\ContactRepository;
+use App\Repository\ContactDetailRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,10 +47,11 @@ class AgendaController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_agenda_show', methods: ['GET'])]
-    public function show(Agenda $agenda): Response
+    public function show(Agenda $agenda, Contact $contact): Response
     {
         return $this->render('agenda/show.html.twig', [
             'agenda' => $agenda,
+            'contact' => $contact
         ]);
     }
 
